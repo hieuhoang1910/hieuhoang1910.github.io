@@ -311,7 +311,7 @@ const skillGroups = [
   },
   {
     title: "CAD and documentation",
-    skills: ["FreeCAD", "CQ-Editor", "Fusion 360 familiarity", "LaTeX", "Overleaf", "AIAA formatting", "Technical reports"]
+    skills: ["AutoCAD", "SolidWorks", "Fusion 360", "FreeCAD", "CQ-Editor", "LaTeX", "Overleaf", "AIAA formatting", "Technical reports"]
   },
   {
     title: "Hardware and testing",
@@ -320,6 +320,8 @@ const skillGroups = [
       "Solenoid valve control",
       "Pressure transducers",
       "Vacuum test planning",
+      "Wire harnessing",
+      "Cleanroom assembly",
       "Wind-tunnel data",
       "Gas turbine lab data"
     ]

@@ -7,7 +7,9 @@ Built from personal portfolio notes, local Vinnotek project summaries and report
 ## Live site and QR code
 
 - Live URL: <https://hieuhoang1910.github.io/>
-- `qr-portfolio.png` / `qr-portfolio.svg` - QR codes pointing to the live URL (high error correction; SVG scales for print)
+- `qr-portfolio.png` / `qr-portfolio.svg` - QR codes pointing to the portfolio homepage
+- `qr-card.png` / `qr-card.svg` - QR codes pointing to the digital business card (`card.html`)
+- All QR codes use high error correction; the SVGs scale cleanly for print
 
 To update the site, edit files and push to `main`; GitHub Pages redeploys automatically in about a minute.
 
@@ -26,7 +28,6 @@ msedge --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="Hieu_Hoan
 ## Remaining content checks
 
 - Confirm whether GPA should remain public (currently shown in resume files).
-- Confirm exact CR Metals job title (dates confirmed: June 2021 - June 2022).
 - Review Vinnotek/customer project wording periodically for confidentiality.
 - Replace representative images with approved project screenshots, CAD renders, plots, or report figures when available.
 
@@ -38,5 +39,10 @@ msedge --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="Hieu_Hoan
 - `resume.html` - printable resume page
 - `resume.md` - ATS-friendly Markdown resume
 - `Hieu_Hoang_Resume.pdf` - generated resume PDF
-- `qr-portfolio.png` / `qr-portfolio.svg` - QR codes linking to the live site
+- `card.html` / `card.css` - digital business card page (QR landing target)
+- `card-image.html` - fixed 1200x630 source for the shareable card image (screenshot with headless Edge to regenerate `assets/hieu-card.png`)
+- `assets/hieu-card.png` - shareable business-card image; also the Open Graph link-preview image
+- `Hieu_Hoang.vcf` - vCard downloaded by the card's Save contact button
+- `qr-portfolio.png` / `qr-portfolio.svg` - QR codes linking to the homepage
+- `qr-card.png` / `qr-card.svg` - QR codes linking to the business card
 - `SOURCES.md` - source and image-credit notes
