@@ -9,7 +9,7 @@ const projects = [
     tools: ["Python", "LaTeX", "Arduino MEGA 2560", "Excel", "thermal resistance modeling"],
     visual: "propulsion",
     colors: ["#0d3447", "#432815"],
-    image: "assets/projects/msat-mr-mrs-thruster.jpg",
+    image: "assets/images/projects/msat-mr-mrs-thruster.jpg",
     imageAlt: "M-SAT MR and MRS SAT cold-gas thruster hardware",
     imageCredit: "Photo: M-SAT public propulsion page",
     summary:
@@ -34,7 +34,7 @@ const projects = [
     tools: ["Excel", "Python", "experimental data reduction", "test planning"],
     visual: "data",
     colors: ["#12324a", "#183c2a"],
-    image: "assets/projects/mst-satellite-lab-pcb.png",
+    image: "assets/images/projects/mst-satellite-lab-pcb.png",
     imageAlt: "Missouri S&T Satellite Research Team members working on a printed circuit board",
     imageCredit: "Photo: Missouri S&T News, Joseph Nguyen",
     summary:
@@ -65,7 +65,7 @@ const projects = [
     ],
     visual: "thermal",
     colors: ["#183a3a", "#54331a"],
-    image: "assets/projects/vinnotek-master-baseline-viewer.png",
+    image: "assets/images/projects/vinnotek-master-baseline-viewer.png",
     imageAlt: "Vinnotek Cold Plate Master Baseline Viewer interface showing candidate table, 3D viewer, and junction-to-coolant KPI",
     imageCredit: "Screenshot: local Vinnotek Master Baseline Viewer",
     summary:
@@ -112,7 +112,7 @@ const projects = [
     tools: ["CAD planning", "test matrix design", "DfAM rules", "mechanical validation"],
     visual: "propulsion",
     colors: ["#172d43", "#28351b"],
-    image: "assets/projects/msat-structure-closeup-2.jpg",
+    image: "assets/images/projects/msat-structure-closeup-2.jpg",
     imageAlt: "Machined aluminum satellite structure closeup",
     imageCredit: "Photo: M-SAT public structures page",
     summary:
@@ -225,7 +225,7 @@ const projects = [
     tools: ["MATLAB", "Python", "cycle equations", "parameter sweeps", "plotting"],
     visual: "propulsion",
     colors: ["#102e45", "#3f361b"],
-    image: "assets/projects/mst-satellite-team-photo.png",
+    image: "assets/images/projects/mst-satellite-team-photo.png",
     imageAlt: "Missouri S&T Satellite Research Team group photo outside Toomey Hall",
     imageCredit: "Photo: Missouri S&T News, Joseph Nguyen",
     summary:
@@ -346,6 +346,8 @@ const skillGroups = [
 
 const iconPaths = {
   grid: '<path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/>',
+  phone:
+    '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/>',
   mail: '<path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/>',
   github:
     '<path d="M15 22v-3.9a3.4 3.4 0 0 0-.9-2.6c3 0 6.1-1.5 6.1-6.6a5.1 5.1 0 0 0-1.4-3.6 4.7 4.7 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.8 12.8 0 0 0-6.7 0C5.7.4 4.6.7 4.6.7a4.7 4.7 0 0 0-.1 3.6A5.1 5.1 0 0 0 3.1 8c0 5.1 3.1 6.6 6.1 6.6a3.4 3.4 0 0 0-1 2.6V22"/>',

@@ -23,15 +23,15 @@
 
 ## Downloaded public image assets
 
-- `assets/projects/msat-mr-mrs-thruster.jpg` from the M-SAT propulsion page.
-- `assets/projects/msat-structure-closeup-1.jpg` and `assets/projects/msat-structure-closeup-2.jpg` from the M-SAT structures page.
-- `assets/projects/mst-satellite-lab-pcb.png` from the Missouri S&T News article. Captioned by Missouri S&T as Satellite Research Team members working on a student-designed printed circuit board. Photo by Joseph Nguyen.
-- `assets/projects/mst-satellite-team-photo.png` from the Missouri S&T News article. Photo by Joseph Nguyen.
+- `assets/images/projects/msat-mr-mrs-thruster.jpg` from the M-SAT propulsion page.
+- `assets/images/projects/msat-structure-closeup-1.jpg` and `assets/images/projects/msat-structure-closeup-2.jpg` from the M-SAT structures page.
+- `assets/images/projects/mst-satellite-lab-pcb.png` from the Missouri S&T News article. Captioned by Missouri S&T as Satellite Research Team members working on a student-designed printed circuit board. Photo by Joseph Nguyen.
+- `assets/images/projects/mst-satellite-team-photo.png` from the Missouri S&T News article. Photo by Joseph Nguyen.
 
 ## Local project screenshots
 
-- `assets/projects/vinnotek-master-baseline-viewer.png` captured from the local Cold Plate Master Baseline Viewer served from `C:\Vinnotek\2. Projects\01 Active Projects\Hieu - cold plate\07_WebApp`.
+- `assets/images/projects/vinnotek-master-baseline-viewer.png` captured from the local Cold Plate Master Baseline Viewer served from `C:\Vinnotek\2. Projects\01 Active Projects\Hieu - cold plate\07_WebApp`.
 
 ## Personal image asset
 
-- `assets/profile/hieu-profile-portrait.jpg`, `assets/profile/hieu-profile-square.jpg`, and `assets/profile/hieu-profile-avatar.jpg` were generated from the profile photo supplied by Hieu Hoang in the Codex session.
+- `assets/images/profile/hieu-profile-portrait.jpg`, `assets/images/profile/hieu-profile-square.jpg`, and `assets/images/profile/hieu-profile-avatar.jpg` were generated from the profile photo supplied by Hieu Hoang in the Codex session.
