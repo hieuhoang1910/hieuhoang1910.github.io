@@ -39,7 +39,6 @@ Rolla, MO | Aug. 2022 - May 2025
 St. Louis, MO
 
 - Supported practical engineering and manufacturing tasks requiring technical communication, process understanding, and hands-on problem solving.
-- Apply final dates, title, and measurable outcomes before external submission.
 
 ## Selected Engineering Projects
 
