@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio for Hieu Hoang, an aerospace engineer focused on propulsion, thermal analysis, spacecraft systems, engineering computation, and AI-assisted engineering workflows."
+    />
+    <meta name="theme-color" content="#071118" />
+    <title>Hieu Hoang | Aerospace Engineering Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand-mark" href="#home" aria-label="Hieu Hoang home">
+          <span class="brand-symbol">HH</span>
+          <span>
+            <strong>Hieu Hoang</strong>
+            <small>Aerospace engineer</small>
+          </span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="icon-lines" aria-hidden="true"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#github">GitHub</a>
+          <a href="#skills">Skills</a>
+          <a href="#resume">Resume</a>
+          <a class="nav-contact" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="zoom-story" id="home" aria-labelledby="hero-title">
+        <div class="zoom-stage">
+          <canvas id="mission-canvas" width="1440" height="920" aria-hidden="true"></canvas>
+
+          <div class="story-media-stack" aria-hidden="true">
+            <figure class="story-layer portrait-layer is-active" data-story-layer="0">
+              <img src="assets/profile/hieu-profile-portrait.jpg" alt="" />
+            </figure>
+            <figure class="story-layer hardware-layer" data-story-layer="1">
+              <img src="assets/projects/msat-mr-mrs-thruster.jpg" alt="" />
+            </figure>
+            <figure class="story-layer lab-layer" data-story-layer="2">
+              <img src="assets/projects/mst-satellite-lab-pcb.png" alt="" />
+            </figure>
+            <figure class="story-layer structure-layer" data-story-layer="3">
+              <img src="assets/projects/msat-structure-closeup-1.jpg" alt="" />
+            </figure>
+            <figure class="story-layer team-layer" data-story-layer="4">
+              <img src="assets/projects/mst-satellite-team-photo.png" alt="" />
+            </figure>
+          </div>
+
+          <div class="zoom-core" aria-hidden="true">
+            <span class="orbit orbit-a"></span>
+            <span class="orbit orbit-b"></span>
+            <span class="orbit-dot"></span>
+          </div>
+
+          <div class="story-copy">
+            <article class="story-scene center-scene is-active" data-story-scene="0">
+              <p class="eyebrow">Propulsion | thermal systems | engineering computation</p>
+              <h1 id="hero-title">Aerospace engineer building systems from physics to test.</h1>
+              <p>
+                Scroll to move through the portfolio like a mission sequence: identity, M-SAT propulsion work,
+                analysis projects, automation, and resume proof.
+              </p>
+              <div class="hero-actions" aria-label="Primary actions">
+                <a class="button primary" href="#projects">
+                  <span data-icon="grid"></span>
+                  View projects
+                </a>
+                <a class="button ghost" href="Hieu_Hoang_Resume.pdf" download="Hieu_Hoang_Resume.pdf">
+                  <span data-icon="download"></span>
+                  Download resume
+                </a>
+              </div>
+            </article>
+
+            <article class="story-scene" data-story-scene="1">
+              <p class="eyebrow">M-SAT propulsion</p>
+              <h2>CubeSat-class cold gas, upgraded toward warm-gas resistojet behavior.</h2>
+              <p>
+                Led Spring 2025 resistojet upgrade work around R134a baseline testing, heat-transfer modeling,
+                heater sizing, and future vacuum-test planning.
+              </p>
+              <div class="story-stat-row">
+                <span><strong>35.6 W</strong> heat estimate</span>
+                <span><strong>18.76 mN</strong> baseline thrust</span>
+              </div>
+            </article>
+
+            <article class="story-scene" data-story-scene="2">
+              <p class="eyebrow">Analysis stack</p>
+              <h2>Data reduction, thermal models, and code that expose assumptions.</h2>
+              <p>
+                Shock-tube Fanno flow, SR-30 gas turbine performance, wind-tunnel coefficients, modal wing response,
+                turbofan cycle sweeps, and public GitHub code.
+              </p>
+              <div class="story-stat-row">
+                <span><strong>Python</strong> NumPy + plots</span>
+                <span><strong>MATLAB</strong> cycle models</span>
+              </div>
+            </article>
+
+            <article class="story-scene" data-story-scene="3">
+              <p class="eyebrow">Vinnotek R&D</p>
+              <h2>Master baseline tools for copper-AM thermal design.</h2>
+              <p>
+                Cold Plate Master Baseline Viewer, validated Python solvers, live candidate comparison, die-coverage
+                gates, and copper-AM manufacturability checks.
+              </p>
+              <div class="story-stat-row">
+                <span><strong>14.52</strong> mK/W R_jc view</span>
+                <span><strong>8</strong> live candidates</span>
+              </div>
+            </article>
+
+            <article class="story-scene center-scene" data-story-scene="4">
+              <p class="eyebrow">Ready to inspect</p>
+              <h2>Projects, resume, GitHub, and contact are below.</h2>
+              <p>
+                The rest of the page keeps the detailed cards, source-backed project notes, downloadable resume, and
+                contact links for recruiters or collaborators.
+              </p>
+              <div class="hero-actions" aria-label="Story actions">
+                <a class="button primary" href="#projects">
+                  <span data-icon="grid"></span>
+                  Explore details
+                </a>
+                <a class="button secondary" href="mailto:hieuhoang1910@outlook.com">
+                  <span data-icon="mail"></span>
+                  Contact
+                </a>
+                <a class="button ghost" href="https://github.com/hieuhoang1910?tab=repositories" target="_blank" rel="noreferrer">
+                  <span data-icon="github"></span>
+                  GitHub
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="story-progress" aria-hidden="true">
+            <span></span>
+          </div>
+          <div class="scroll-cue" aria-hidden="true">Scroll</div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="eyebrow">Profile</p>
+          <h2 id="about-title">Engineering direction</h2>
+        </div>
+        <div class="about-layout">
+          <div class="about-copy">
+            <p>
+              I am an aerospace engineering graduate focused on propulsion systems, spacecraft hardware,
+              thermal-fluid analysis, and computational engineering. I like work where the physics, code, CAD,
+              instrumentation, and final technical story all need to agree.
+            </p>
+            <p>
+              My academic project base includes cold-gas and resistojet thruster research, shock-tube pressure
+              processing, SR-30 gas turbine analysis, wind-tunnel coefficient extraction, modal wing analysis, and
+              turbofan cycle modeling. My newer Vinnotek work adds copper-AM cold-plate analysis, additive
+              manufacturing screening, internal AI automation, and practical technical documentation.
+            </p>
+          </div>
+          <div class="principles-panel">
+            <h3>What I bring</h3>
+            <ul>
+              <li>Derive the model, write the code, and check the assumptions.</li>
+              <li>Turn imperfect experimental data into defensible engineering decisions.</li>
+              <li>Bridge aerospace analysis, CAD, AM process constraints, and test planning.</li>
+              <li>Use AI tools as engineering accelerators, with traceability and human review.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading wide">
+          <div>
+            <p class="eyebrow">Work samples</p>
+            <h2 id="projects-title">Project portfolio</h2>
+          </div>
+          <p>
+            Public academic and GitHub projects are shown directly. Vinnotek/customer work is framed as
+            portfolio-safe capability evidence unless it is already public or non-sensitive.
+          </p>
+        </div>
+
+        <div class="project-toolbar" role="region" aria-label="Project filters">
+          <div class="search-control">
+            <span data-icon="search"></span>
+            <input id="project-search" type="search" placeholder="Search projects, tools, or tags" autocomplete="off" />
+          </div>
+          <div class="filter-row" id="filter-row" aria-label="Category filters"></div>
+        </div>
+
+        <div class="project-grid" id="project-grid"></div>
+      </section>
+
+      <section class="section github-section" id="github" aria-labelledby="github-title">
+        <div class="section-heading wide">
+          <div>
+            <p class="eyebrow">Code evidence</p>
+            <h2 id="github-title">GitHub repository snapshot</h2>
+          </div>
+          <p>
+            Verified from the public GitHub profile on July 9, 2026. The strongest repository is
+            <a href="https://github.com/hieuhoang1910/my-codes" target="_blank" rel="noreferrer">my-codes</a>.
+          </p>
+        </div>
+
+        <div class="github-layout">
+          <article class="repo-card">
+            <div class="repo-card-head">
+              <span data-icon="github"></span>
+              <div>
+                <h3>my-codes</h3>
+                <p>Engineering code projects across C++, MATLAB, Python, C, and aerospace computation.</p>
+              </div>
+            </div>
+            <div class="repo-meta">
+              <span>Public</span>
+              <span>1 star</span>
+              <span>15 commits visible</span>
+            </div>
+            <div class="language-stack" aria-label="Repository language mix">
+              <span style="--w: 42.1%; --c: #5cc8ff" title="C++ 42.1%"></span>
+              <span style="--w: 29.2%; --c: #f6b14b" title="MATLAB 29.2%"></span>
+              <span style="--w: 24.4%; --c: #67d28f" title="Python 24.4%"></span>
+              <span style="--w: 4.3%; --c: #e66d8f" title="C 4.3%"></span>
+            </div>
+            <div class="language-legend">
+              <span><i style="background:#5cc8ff"></i>C++ 42.1%</span>
+              <span><i style="background:#f6b14b"></i>MATLAB 29.2%</span>
+              <span><i style="background:#67d28f"></i>Python 24.4%</span>
+              <span><i style="background:#e66d8f"></i>C 4.3%</span>
+            </div>
+            <a class="button secondary" href="https://github.com/hieuhoang1910/my-codes" target="_blank" rel="noreferrer">
+              <span data-icon="external"></span>
+              Open repository
+            </a>
+          </article>
+
+          <div class="repo-index" id="repo-index"></div>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <p class="eyebrow">Technical range</p>
+          <h2 id="skills-title">Skills and tools</h2>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+      </section>
+
+      <section class="section resume-section" id="resume" aria-labelledby="resume-title">
+        <div class="section-heading wide">
+          <div>
+            <p class="eyebrow">Resume</p>
+            <h2 id="resume-title">Condensed engineering resume</h2>
+          </div>
+          <a class="button ghost" href="Hieu_Hoang_Resume.pdf" download="Hieu_Hoang_Resume.pdf">
+            <span data-icon="download"></span>
+            Download resume PDF
+          </a>
+        </div>
+
+        <div class="resume-layout">
+          <div class="timeline">
+            <article>
+              <span>2025</span>
+              <h3>B.S. Aerospace Engineering</h3>
+              <p>Missouri University of Science and Technology. Focus: propulsion, compressible flow, thermal-fluid analysis, experimental methods, aerospace design, and engineering computation.</p>
+            </article>
+            <article>
+              <span>2025</span>
+              <h3>Propulsion Research Team Five Lead</h3>
+              <p>Led resistojet upgrade analysis for a CubeSat-class R134a cold-gas propulsion setup, including thermal modeling, prior test-data review, and future hardware recommendations.</p>
+            </article>
+            <article>
+              <span>2026</span>
+              <h3>Vinnotek technical projects</h3>
+              <p>Worked across copper-AM thermal design, AM technical screening, AI-assisted presales automation, and reusable engineering documentation.</p>
+            </article>
+          </div>
+          <div class="resume-summary">
+            <h3>Target roles</h3>
+            <div class="chip-cloud">
+              <span>Aerospace engineer</span>
+              <span>Propulsion engineer</span>
+              <span>Thermal-fluid engineer</span>
+              <span>Spacecraft systems engineer</span>
+              <span>Aerospace R&D engineer</span>
+              <span>Engineering automation builder</span>
+            </div>
+            <div class="resume-links">
+              <a href="resume.html">Printable HTML resume</a>
+              <a href="resume.md">ATS Markdown resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Let us talk engineering systems.</h2>
+            <p>
+              Best fit: propulsion, spacecraft systems, thermal analysis, aerospace R&D, CAD/CAE,
+              additive manufacturing, and engineering automation.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:hieuhoang1910@outlook.com">
+              <span data-icon="mail"></span>
+              hieuhoang1910@outlook.com
+            </a>
+            <a class="button secondary" href="https://www.linkedin.com/in/hieu-hoang-8b195224a/" target="_blank" rel="noreferrer">
+              <span data-icon="external"></span>
+              LinkedIn
+            </a>
+            <a class="button ghost" href="https://github.com/hieuhoang1910?tab=repositories" target="_blank" rel="noreferrer">
+              <span data-icon="github"></span>
+              @hieuhoang1910
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built from local portfolio notes, local Vinnotek project folders, public GitHub data, and public M-SAT / Missouri S&T pages.</p>
+      <p>Before publishing: verify phone/location, LinkedIn URL, GPA visibility, and any confidential project wording.</p>
+      <p>Project photo credits: Missouri S&T News and M-SAT public site pages.</p>
+    </footer>
+
+    <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-shell">
+        <button class="icon-button close-dialog" type="button" aria-label="Close project detail">
+          <span data-icon="close"></span>
+        </button>
+        <div class="dialog-media" id="dialog-media"></div>
+        <div class="dialog-content">
+          <p class="eyebrow" id="dialog-kicker"></p>
+          <h2 id="dialog-title"></h2>
+          <p id="dialog-summary"></p>
+          <div class="detail-grid" id="dialog-details"></div>
+          <div class="detail-section">
+            <h3>Highlights</h3>
+            <ul id="dialog-highlights"></ul>
+          </div>
+          <div class="detail-section">
+            <h3>Methods and tools</h3>
+            <div class="chip-cloud" id="dialog-tools"></div>
+          </div>
+          <div class="detail-section">
+            <h3>Portfolio note</h3>
+            <p id="dialog-note"></p>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
