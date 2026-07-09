@@ -36,7 +36,7 @@ Rolla, MO | Aug. 2022 - May 2025
 - Created engineering briefs for adaptive FDM and continuous-fiber drone-frame development, including design variables, manufacturability constraints, test methods, and intern work packages.
 
 **CR Metals Inc.** - Entry-Level Engineering Support  
-St. Louis, MO
+St. Louis, MO | June 2021 - June 2022
 
 - Supported practical engineering and manufacturing tasks requiring technical communication, process understanding, and hands-on problem solving.
 

@@ -22,9 +22,7 @@ const projects = [
       "Reviewed vacuum-chamber cold-gas thrust data and diagnosed non-linear multi-thruster scaling.",
       "Connected target exhaust velocity to heat addition using energy balance logic.",
       "Recommended future thermocouple instrumentation, PEEK-class hardware revision, and higher-fidelity thermal simulation."
-    ],
-    note:
-      "Strongest public-facing aerospace project. Keep detailed data public only where it is already coursework/research-safe."
+    ]
   },
   {
     slug: "cold-gas-r134a-analysis",
@@ -49,9 +47,7 @@ const projects = [
       "Separated measured thrust behavior from ideal linear scaling assumptions.",
       "Flagged distributor and pressure recovery limits as practical hardware constraints.",
       "Converted test observations into specific next-step redesign and measurement recommendations."
-    ],
-    note:
-      "Good companion project to the resistojet work because it shows baseline test interpretation before redesign."
+    ]
   },
   {
     slug: "vinnotek-master-baseline-viewer",
@@ -82,9 +78,7 @@ const projects = [
       "Created a reusable master baseline path for wavy fins, straight fins, pin fins, TPMS/gyroid, lattice, and hybrid core studies.",
       "Exposed candidate comparison, KPI stack, 3D geometry tuning, optimizer, report export, and manufacturability status in one internal review tool.",
       "Kept coverage, pressure drop, pump power, supplier coupon, CFD/CHT, roughness, and open-channel-area gates visible before external claims."
-    ],
-    note:
-      "Portfolio-safe framing should emphasize the baseline method and viewer architecture while keeping customer geometry and supplier-specific data private."
+    ]
   },
   {
     slug: "atlas-ai-presales",
@@ -100,15 +94,13 @@ const projects = [
       "Designed a local automation workflow that pulls company data, applies an editable scoring template, asks a local LLM to rank companies A/B/C/D, and generates a reviewed Excel lead workbook for industrial 3D-printing sales.",
     role: "Automation builder",
     date: "2026",
-    metrics: "281 exhibitors pulled, 93 Vietnamese companies scored, 6 mould/die-maker leads surfaced in latest noted run",
+    metrics: "281 exhibitors pulled, 93 Vietnamese companies scored, 6 mold/die-maker leads surfaced in latest noted run",
     highlights: [
       "Kept the scoring engine local with qwen3:14b instead of cloud calls.",
       "Used an Excel template as the controllable scoring contract.",
       "Created a run flow that starts local AI, Docker/n8n, scraping, scoring, reporting, and workbook output.",
       "Built the workflow around human review before CRM handoff."
-    ],
-    note:
-      "Use as evidence of practical AI systems work. Keep live lead data and CRM details out of public deployment."
+    ]
   },
   {
     slug: "adaptive-fdm-drone-frame",
@@ -133,9 +125,7 @@ const projects = [
       "Defined stiffness, mass, vibration, repairability, anisotropy, and fiber-path constraints.",
       "Split the work into parametric CAD, materials/process, simulation, and validation tracks.",
       "Positioned continuous fiber as a load-path tool that must be validated against geometry and test data."
-    ],
-    note:
-      "Good public artifact because it shows engineering planning, not confidential customer data."
+    ]
   },
   {
     slug: "shock-tube-fanno-flow",
@@ -157,9 +147,7 @@ const projects = [
       "Estimated pressure ratios and Mach states from transient signals.",
       "Used Fanno flow relations to estimate friction coefficient.",
       "Documented uncertainty from timing, reflected shocks, and inconsistent pressure states."
-    ],
-    note:
-      "Visible in the public my-codes repository and useful as a compact compressible-flow data project."
+    ]
   },
   {
     slug: "sr30-gas-turbine",
@@ -181,9 +169,7 @@ const projects = [
       "Computed compressor work, turbine work, thrust, and thermal efficiency trends.",
       "Generated performance plots across RPM cases.",
       "Flagged data-quality issues where computed values were physically suspect."
-    ],
-    note:
-      "Use with caveats visible; the project shows engineering judgment, not only calculation output."
+    ]
   },
   {
     slug: "wind-tunnel-wing",
@@ -205,9 +191,7 @@ const projects = [
       "Compared coefficient behavior across angle-of-attack sweeps.",
       "Generated drag polar and trend plots.",
       "Maintained geometry and density assumptions explicitly in the workflow."
-    ],
-    note:
-      "Solid public project for data reduction and experimental aerodynamics."
+    ]
   },
   {
     slug: "modal-wing-analysis",
@@ -229,9 +213,7 @@ const projects = [
       "Generated spatial contour maps across the wing.",
       "Compared amplitude and quality-factor behavior.",
       "Connected vibration response to structural interpretation."
-    ],
-    note:
-      "Useful as a structures and vibration complement to the propulsion-heavy project set."
+    ]
   },
   {
     slug: "turbofan-cycle-modeling",
@@ -256,9 +238,7 @@ const projects = [
       "Compared TSFC and specific thrust trends.",
       "Connected design variables to performance behavior.",
       "Created plots suitable for technical explanation."
-    ],
-    note:
-      "Good project for roles that care about propulsion cycle fundamentals."
+    ]
   },
   {
     slug: "engineering-code-collection",
@@ -280,9 +260,7 @@ const projects = [
       "Includes FEA, uncertainty modeling, and vehicle efficiency computations.",
       "Collects aerospace experimental data processing work into a public proof point.",
       "Provides links recruiters can inspect directly."
-    ],
-    note:
-      "Primary GitHub proof source. The other public repo, coding-projects, was empty at the time checked."
+    ]
   }
 ];
 
@@ -333,7 +311,7 @@ const skillGroups = [
   },
   {
     title: "CAD and documentation",
-    skills: ["FreeCAD", "CQ-Editor", "Fusion 360 familiarity", "LaTeX", "Overleaf", "AIAA formatting", "technical reports"]
+    skills: ["FreeCAD", "CQ-Editor", "Fusion 360 familiarity", "LaTeX", "Overleaf", "AIAA formatting", "Technical reports"]
   },
   {
     title: "Hardware and testing",
@@ -348,19 +326,19 @@ const skillGroups = [
   },
   {
     title: "Additive manufacturing",
-    skills: ["Copper AM", "LPBF screening", "FDM/FFF", "continuous-fiber FDM", "DfAM", "material/process comparison"]
+    skills: ["Copper AM", "LPBF screening", "FDM/FFF", "Continuous-fiber FDM", "DfAM", "Material/process comparison"]
   },
   {
     title: "AI and automation",
-    skills: ["AI-assisted coding", "local LLM workflows", "n8n pipelines", "Excel scoring contracts", "data scraping strategy"]
+    skills: ["AI-assisted coding", "Local LLM workflows", "n8n pipelines", "Excel scoring contracts", "Data scraping strategy"]
   },
   {
     title: "Data methods",
-    skills: ["NumPy", "Matplotlib", "Monte Carlo", "RSM", "root solving", "sensitivity analysis", "data cleaning"]
+    skills: ["NumPy", "Matplotlib", "Monte Carlo", "RSM", "Root solving", "Sensitivity analysis", "Data cleaning"]
   },
   {
     title: "Engineering judgment",
-    skills: ["assumption tracking", "validation gates", "public/private project framing", "testable recommendations"]
+    skills: ["Assumption tracking", "Validation gates", "Public/private project framing", "Testable recommendations"]
   }
 ];
 
@@ -497,6 +475,7 @@ function renderSkills() {
 function prepareContentAnimations(root = document) {
   const selectors = [
     ".section-heading",
+    ".about-photo",
     ".about-copy",
     ".principles-panel",
     ".metric-band div",
@@ -562,7 +541,6 @@ function openProject(slug) {
     .join("");
   document.querySelector("#dialog-highlights").innerHTML = project.highlights.map((item) => `<li>${item}</li>`).join("");
   document.querySelector("#dialog-tools").innerHTML = project.tools.map((tool) => `<span>${tool}</span>`).join("");
-  document.querySelector("#dialog-note").textContent = project.note;
 
   if (typeof dialog.showModal === "function") {
     dialog.showModal();
