@@ -625,6 +625,7 @@ function initZoomStory() {
   const scenes = [...document.querySelectorAll("[data-story-scene]")];
   const layers = [...document.querySelectorAll("[data-story-layer]")];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const compactStory = window.matchMedia("(max-width: 720px)");
   let ticking = false;
 
   function clamp(value, min = 0, max = 1) {
@@ -640,13 +641,21 @@ function initZoomStory() {
     const sceneFloat = progress * (scenes.length - 1);
     const activeScene = Math.min(scenes.length - 1, Math.round(sceneFloat));
     const localProgress = sceneFloat - Math.floor(sceneFloat);
+    const isCompact = compactStory.matches;
 
     stage.style.setProperty("--story-progress", progress.toFixed(4));
     stage.style.setProperty("--scene-progress", localProgress.toFixed(4));
     stage.style.setProperty("--scene-index", activeScene);
 
     scenes.forEach((scene, index) => {
+      const distance = Math.abs(index - sceneFloat);
+      const intensity = clamp(1 - distance);
+      const easedIntensity = intensity * intensity * (3 - 2 * intensity);
+      const offset = clamp(index - sceneFloat, -1, 1);
       const isActive = index === activeScene;
+      const visualIntensity = isCompact && !isActive ? 0 : easedIntensity;
+      scene.style.setProperty("--scene-intensity", visualIntensity.toFixed(4));
+      scene.style.setProperty("--scene-offset", offset.toFixed(4));
       scene.classList.toggle("is-active", isActive);
       scene.setAttribute("aria-hidden", String(!isActive));
     });
@@ -655,11 +664,15 @@ function initZoomStory() {
       const distance = Math.abs(index - sceneFloat);
       const intensity = clamp(1 - distance);
       const easedIntensity = intensity * intensity * (3 - 2 * intensity);
-      const scale = 0.92 + easedIntensity * 0.08 + progress * 0.06;
-      const y = (index - sceneFloat) * 3;
-      layer.style.opacity = String(0.05 + easedIntensity * 0.68);
+      const scale = isCompact
+        ? 0.985 + easedIntensity * 0.015
+        : 0.92 + easedIntensity * 0.08 + progress * 0.06;
+      const y = (index - sceneFloat) * (isCompact ? 1.4 : 3);
+      const opacity = isCompact ? 0.02 + easedIntensity * 0.76 : 0.05 + easedIntensity * 0.68;
+      const blur = (1 - easedIntensity) * (isCompact ? 2.4 : 4.5);
+      layer.style.opacity = String(opacity);
       layer.style.transform = `translate3d(0, ${y}vh, 0) scale(${scale.toFixed(3)})`;
-      layer.style.filter = `blur(${((1 - easedIntensity) * 4.5).toFixed(2)}px) saturate(${(0.86 + easedIntensity * 0.18).toFixed(2)}) contrast(1.04)`;
+      layer.style.filter = `blur(${blur.toFixed(2)}px) saturate(${(0.86 + easedIntensity * 0.18).toFixed(2)}) contrast(1.04)`;
       layer.classList.toggle("is-active", easedIntensity > 0.42);
     });
   }
@@ -674,6 +687,7 @@ function initZoomStory() {
   window.addEventListener("scroll", requestUpdate, { passive: true });
   window.addEventListener("resize", requestUpdate);
   reduceMotion.addEventListener?.("change", requestUpdate);
+  compactStory.addEventListener?.("change", requestUpdate);
 }
 
 function initHashProject() {

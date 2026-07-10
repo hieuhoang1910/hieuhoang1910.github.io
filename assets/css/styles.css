@@ -1620,12 +1620,21 @@ h3 {
   }
 
   .zoom-story {
-    height: 440vh;
-    min-height: 2300px;
+    height: 360vh;
+    min-height: 2000px;
+  }
+
+  .intro-layout {
+    gap: 1rem;
+  }
+
+  .intro-photo {
+    order: -1;
   }
 
   .intro-photo img {
-    height: 340px;
+    height: clamp(280px, 42svh, 360px);
+    object-position: 54% 24%;
   }
 
   .intro-copy .hero-actions .button {
@@ -1633,6 +1642,7 @@ h3 {
   }
 
   .zoom-stage {
+    height: 100svh;
     min-height: 620px;
   }
 
@@ -1652,11 +1662,21 @@ h3 {
     background: rgba(4, 12, 17, 0.68);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    transform: translate3d(0, 28px, 0) scale(0.98);
+    opacity: var(--scene-intensity, 0);
+    transform:
+      translate3d(0, calc(var(--scene-offset, 1) * 26px), 0)
+      scale(calc(0.985 + var(--scene-intensity, 0) * 0.015));
+    transition:
+      opacity 140ms linear,
+      transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
   }
 
   .story-scene.is-active {
-    transform: translate3d(0, 0, 0) scale(1);
+    opacity: var(--scene-intensity, 1);
+    transform:
+      translate3d(0, calc(var(--scene-offset, 0) * 26px), 0)
+      scale(calc(0.985 + var(--scene-intensity, 1) * 0.015));
   }
 
   .story-scene.center-scene {
@@ -1664,11 +1684,17 @@ h3 {
     right: 0;
     width: 100%;
     text-align: center;
-    transform: translate3d(0, 28px, 0) scale(0.98);
+    opacity: var(--scene-intensity, 0);
+    transform:
+      translate3d(0, calc(var(--scene-offset, 1) * 26px), 0)
+      scale(calc(0.985 + var(--scene-intensity, 0) * 0.015));
   }
 
   .story-scene.center-scene.is-active {
-    transform: translate3d(0, 0, 0) scale(1);
+    opacity: var(--scene-intensity, 1);
+    transform:
+      translate3d(0, calc(var(--scene-offset, 0) * 26px), 0)
+      scale(calc(0.985 + var(--scene-intensity, 1) * 0.015));
   }
 
   .story-scene.center-scene .hero-actions,
