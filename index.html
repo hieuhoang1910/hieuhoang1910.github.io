@@ -16,6 +16,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <title>Hieu Hoang | Aerospace Engineering Portfolio</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/vendor/phosphor/style.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -81,114 +82,6 @@
         </div>
       </section>
 
-      <section class="zoom-story" id="story" aria-label="Mission sequence story">
-        <div class="zoom-stage">
-          <canvas id="mission-canvas" width="1440" height="920" aria-hidden="true"></canvas>
-
-          <div class="story-media-stack" aria-hidden="true">
-            <figure class="story-layer portrait-layer is-active" data-story-layer="0">
-              <img src="assets/images/profile/hieu-ford-lounge.webp" alt="" />
-            </figure>
-            <figure class="story-layer hardware-layer" data-story-layer="1">
-              <img src="assets/images/projects/msat-mr-mrs-thruster.jpg" alt="" />
-            </figure>
-            <figure class="story-layer lab-layer" data-story-layer="2">
-              <img src="assets/images/projects/mst-satellite-lab-pcb.png" alt="" />
-            </figure>
-            <figure class="story-layer structure-layer" data-story-layer="3">
-              <img src="assets/images/projects/msat-structure-closeup-1.jpg" alt="" />
-            </figure>
-            <figure class="story-layer team-layer" data-story-layer="4">
-              <img src="assets/images/projects/mst-satellite-team-photo.png" alt="" />
-            </figure>
-          </div>
-
-          <div class="zoom-core" aria-hidden="true">
-            <span class="orbit orbit-a"></span>
-            <span class="orbit orbit-b"></span>
-            <span class="orbit-dot"></span>
-          </div>
-
-          <div class="story-copy">
-            <article class="story-scene center-scene is-active" data-story-scene="0">
-              <p class="eyebrow">Propulsion | thermal systems | engineering computation</p>
-              <h2>Scroll through the portfolio like a mission sequence.</h2>
-              <p>
-                Identity, M-SAT propulsion work, analysis projects, Vinnotek R&D, and resume proof -
-                or jump straight to the detailed sections below.
-              </p>
-            </article>
-
-            <article class="story-scene" data-story-scene="1">
-              <p class="eyebrow">M-SAT propulsion</p>
-              <h2>CubeSat-class cold gas, upgraded toward warm-gas resistojet behavior.</h2>
-              <p>
-                Led Spring 2025 resistojet upgrade work around R134a baseline testing, heat-transfer modeling,
-                heater sizing, and future vacuum-test planning.
-              </p>
-              <div class="story-stat-row">
-                <span><strong>35.6 W</strong> heat estimate</span>
-                <span><strong>18.76 mN</strong> baseline thrust</span>
-              </div>
-            </article>
-
-            <article class="story-scene" data-story-scene="2">
-              <p class="eyebrow">Analysis stack</p>
-              <h2>Data reduction, thermal models, and code that expose assumptions.</h2>
-              <p>
-                Shock-tube Fanno flow, SR-30 gas turbine performance, wind-tunnel coefficients, modal wing response,
-                turbofan cycle sweeps, and public GitHub code.
-              </p>
-              <div class="story-stat-row">
-                <span><strong>Python</strong> NumPy + plots</span>
-                <span><strong>MATLAB</strong> cycle models</span>
-              </div>
-            </article>
-
-            <article class="story-scene" data-story-scene="3">
-              <p class="eyebrow">Vinnotek R&D</p>
-              <h2>Master baseline tools for copper-AM thermal design.</h2>
-              <p>
-                Cold Plate Master Baseline Viewer, validated Python solvers, live candidate comparison, die-coverage
-                gates, and copper-AM manufacturability checks.
-              </p>
-              <div class="story-stat-row">
-                <span><strong>14.52</strong> mK/W R_jc view</span>
-                <span><strong>8</strong> live candidates</span>
-              </div>
-            </article>
-
-            <article class="story-scene center-scene" data-story-scene="4">
-              <p class="eyebrow">Ready to inspect</p>
-              <h2>Projects, resume, GitHub, and contact are below.</h2>
-              <p>
-                The rest of the page keeps the detailed project cards, downloadable resume, and
-                contact links for recruiters or collaborators.
-              </p>
-              <div class="hero-actions" aria-label="Story actions">
-                <a class="button primary" href="#projects">
-                  <span data-icon="grid"></span>
-                  Explore details
-                </a>
-                <a class="button secondary" href="mailto:hieuhoang1910@outlook.com">
-                  <span data-icon="mail"></span>
-                  Contact
-                </a>
-                <a class="button ghost" href="https://github.com/hieuhoang1910?tab=repositories" target="_blank" rel="noopener noreferrer">
-                  <span data-icon="github"></span>
-                  GitHub
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <div class="story-progress" aria-hidden="true">
-            <span></span>
-          </div>
-          <div class="scroll-cue" aria-hidden="true">Scroll</div>
-        </div>
-      </section>
-
       <section class="section about-section" id="about" aria-labelledby="about-title">
         <div class="section-heading">
           <p class="eyebrow">Profile</p>
@@ -227,11 +120,56 @@
         </div>
       </section>
 
-      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+      <section class="atlas-section" id="projects" aria-labelledby="atlas-title">
+        <div class="atlas-stage">
+          <div class="atlas-heading">
+            <div>
+              <p class="atlas-counter"><span id="atlas-current">01</span> / 05</p>
+              <h2 id="atlas-title">From propulsion<br />to thermal systems,<br />every assumption<br />should survive the test.</h2>
+            </div>
+            <p class="atlas-intro">I design, build, and validate aerospace systems where physics, computation, and manufacture meet.</p>
+          </div>
+          <div class="atlas-viewport" id="atlas-canvas-host" aria-label="Revolving 3D project atlas"></div>
+          <div class="atlas-fallback" aria-hidden="true" id="atlas-fallback"></div>
+          <div class="atlas-controls" id="atlas-controls" aria-label="Choose featured project"></div>
+          <div class="atlas-arc" aria-hidden="true"><span id="atlas-arc-dot"></span></div>
+        </div>
+      </section>
+
+      <section class="featured-scroll" id="featured-work" aria-labelledby="featured-title">
+        <div class="featured-stage">
+          <div class="featured-copy" id="featured-copy">
+            <p class="featured-count"><span id="featured-current">01</span> / 05</p>
+            <p class="featured-kicker" id="featured-kicker">Academic propulsion</p>
+            <h2 id="featured-title">Resistojet Nozzle Thruster Upgrade</h2>
+            <div class="featured-tags" id="featured-tags"></div>
+            <p class="featured-summary" id="featured-summary"></p>
+            <div class="featured-metric">
+              <span id="featured-metric-label">Baseline thrust</span>
+              <strong id="featured-metric-value">18.76</strong>
+              <small id="featured-metric-unit">mN</small>
+            </div>
+            <button class="featured-inspect" id="featured-inspect" type="button">
+              Inspect project <i class="ph ph-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+          <figure class="featured-media">
+            <img id="featured-image" src="assets/images/projects/msat-mr-mrs-thruster.jpg" alt="M-SAT cold-gas thruster hardware" />
+            <figcaption id="featured-caption">Photo: M-SAT public propulsion page</figcaption>
+          </figure>
+          <div class="featured-nav">
+            <button id="featured-prev" type="button" aria-label="Previous featured project"><i class="ph ph-arrow-left" aria-hidden="true"></i></button>
+            <div id="featured-progress" aria-label="Featured project progress"></div>
+            <button id="featured-next" type="button" aria-label="Next featured project"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="work-archive" aria-labelledby="projects-title">
         <div class="section-heading wide">
           <div>
-            <p class="eyebrow">Work samples</p>
-            <h2 id="projects-title">Project portfolio</h2>
+            <p class="eyebrow">Engineering archive</p>
+            <h2 id="projects-title">Additional work</h2>
           </div>
           <p>
             Academic and GitHub projects are shown in full detail. Vinnotek and client work is presented
@@ -359,34 +297,19 @@
         </div>
       </section>
 
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-panel">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">Let's talk engineering systems.</h2>
-            <p>
-              Best fit: propulsion, spacecraft systems, thermal analysis, aerospace R&D, CAD/CAE,
-              additive manufacturing, and engineering automation.
-            </p>
-          </div>
-          <div class="contact-actions">
-            <a class="button primary" href="mailto:hieuhoang1910@outlook.com">
-              <span data-icon="mail"></span>
-              hieuhoang1910@outlook.com
-            </a>
-            <a class="button secondary" href="tel:+84865508438">
-              <span data-icon="phone"></span>
-              +84 86 550 8438
-            </a>
-            <a class="button secondary" href="https://www.linkedin.com/in/hieu-hoang-8b195224a/" target="_blank" rel="noopener noreferrer">
-              <span data-icon="external"></span>
-              LinkedIn
-            </a>
-            <a class="button ghost" href="https://github.com/hieuhoang1910?tab=repositories" target="_blank" rel="noopener noreferrer">
-              <span data-icon="github"></span>
-              @hieuhoang1910
-            </a>
-          </div>
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-orbit">
+          <p class="contact-label">Contact / Collaboration</p>
+          <h2 id="contact-title">Ready for the<br />next mission.</h2>
+          <a class="contact-cta" href="mailto:hieuhoang1910@outlook.com">
+            Start a conversation <i class="ph ph-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="contact-index">
+          <a href="mailto:hieuhoang1910@outlook.com"><span>Email</span><strong>hieuhoang1910@outlook.com</strong></a>
+          <a href="tel:+84865508438"><span>Phone</span><strong>+84 86 550 8438</strong></a>
+          <a href="https://www.linkedin.com/in/hieu-hoang-8b195224a/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>hieu-hoang <i class="ph ph-arrow-up-right" aria-hidden="true"></i></strong></a>
+          <a href="https://github.com/hieuhoang1910?tab=repositories" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>hieuhoang1910 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></strong></a>
         </div>
       </section>
     </main>
@@ -420,5 +343,6 @@
     </dialog>
 
     <script src="assets/js/app.js" defer></script>
+    <script type="module" src="assets/js/atlas3d.js"></script>
   </body>
 </html>

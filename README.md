@@ -1,6 +1,6 @@
 # Hieu Hoang Portfolio Webapp
 
-Static, dependency-free portfolio webapp, live at **<https://hieuhoang1910.github.io/>**.
+Static, no-build portfolio webapp with vendored Three.js, Phosphor icons, and local webfonts, live at **<https://hieuhoang1910.github.io/>**.
 
 Built from personal portfolio notes, local Vinnotek project summaries and reports, a Cold Plate Master Baseline Viewer screenshot, and public GitHub profile/repository pages for `hieuhoang1910`.
 
@@ -26,7 +26,9 @@ To update the site, edit files and push to `main`; GitHub Pages redeploys automa
 index.html, card.html, resume.html   entry pages (URLs must stay stable - QR codes target them)
 favicon.svg                          shared favicon
 assets/css/                          styles.css (site), resume.css, card.css
-assets/js/                           app.js (project data, filters, dialogs, canvas)
+assets/js/                           app.js (data and UI), atlas3d.js (Three.js project atlas)
+assets/vendor/                       vendored Three.js and Phosphor icon runtime files
+assets/fonts/                        local Inter and Barlow Condensed webfonts
 assets/images/profile/               profile photos
 assets/images/projects/              project and M-SAT photos
 assets/qr/                           QR code files
@@ -38,7 +40,13 @@ private/                             (gitignored) personal source material, old 
 
 ## Open locally
 
-Open `index.html` directly in a browser. No build step is required.
+No build step is required. Serve the folder over HTTP because the Three.js atlas uses an ES module:
+
+```text
+python -m http.server 4173
+```
+
+Then open `http://127.0.0.1:4173/`.
 
 ## Regenerating generated files
 

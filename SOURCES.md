@@ -32,6 +32,12 @@
 
 - `assets/images/projects/vinnotek-master-baseline-viewer.png` captured from the local Cold Plate Master Baseline Viewer served from `C:\Vinnotek\2. Projects\01 Active Projects\Hieu - cold plate\07_WebApp`.
 
+## Generated concept visuals
+
+- `assets/images/projects/atlas-ai-workflow.webp` is an illustrative workflow visual generated for this portfolio. It represents the documented ATLAS stages without claiming to be a live product screenshot or displaying fabricated metrics.
+- `assets/images/projects/fdm-drone-frame-concept.webp` is an illustrative four-arm FDM quadcopter-frame concept generated for this portfolio. It is not presented as fabricated or tested hardware.
+- `assets/images/contact/earth-horizon.webp` is a generated cinematic Earth-horizon background for the contact section.
+
 ## Personal image asset
 
 - `assets/images/profile/hieu-profile-portrait.jpg`, `assets/images/profile/hieu-profile-square.jpg`, and `assets/images/profile/hieu-profile-avatar.jpg` were generated from the profile photo supplied by Hieu Hoang in the Codex session.

@@ -90,6 +90,9 @@ const projects = [
     tools: ["PowerShell", "Node.js", "n8n", "Ollama", "Excel reporting", "JSON pipelines"],
     visual: "data",
     colors: ["#19304c", "#26341f"],
+    image: "assets/images/projects/atlas-ai-workflow.webp",
+    imageAlt: "Illustrative ATLAS workflow showing discovery, scoring, local AI, human review, and CRM handoff",
+    imageCredit: "Concept visualization generated for this portfolio",
     summary:
       "Designed a local automation workflow that pulls company data, applies an editable scoring template, asks a local LLM to rank companies A/B/C/D, and generates a reviewed Excel lead workbook for industrial 3D-printing sales.",
     role: "Automation builder",
@@ -112,9 +115,9 @@ const projects = [
     tools: ["CAD planning", "test matrix design", "DfAM rules", "mechanical validation"],
     visual: "propulsion",
     colors: ["#172d43", "#28351b"],
-    image: "assets/images/projects/msat-structure-closeup-2.jpg",
-    imageAlt: "Machined aluminum satellite structure closeup",
-    imageCredit: "Photo: M-SAT public structures page",
+    image: "assets/images/projects/fdm-drone-frame-concept.webp",
+    imageAlt: "Concept render of a modular FDM quadcopter frame with replaceable arms",
+    imageCredit: "Concept visualization generated for this portfolio",
     summary:
       "Created a thesis-style engineering roadmap for lightweight modular drone frames manufactured by FDM and continuous-fiber FDM. The brief defines design variables, testing gates, success criteria, and intern subtopics.",
     role: "Technical brief author",
@@ -263,6 +266,8 @@ const projects = [
     ]
   }
 ];
+
+window.portfolioProjects = projects;
 
 const repoItems = [
   {
@@ -559,6 +564,142 @@ function closeProject() {
   if (location.hash.startsWith("#project=")) {
     history.replaceState(null, "", "#projects");
   }
+}
+
+window.openPortfolioProject = openProject;
+
+const featuredProjectConfig = [
+  {
+    slug: "resistojet-nozzle-thruster",
+    label: "Propulsion",
+    metricLabel: "Single-thruster baseline",
+    metricValue: "18.76",
+    metricUnit: "mN"
+  },
+  {
+    slug: "vinnotek-master-baseline-viewer",
+    label: "Cold Plate",
+    metricLabel: "Best junction-to-coolant",
+    metricValue: "14.52",
+    metricUnit: "mK/W"
+  },
+  {
+    slug: "cold-gas-r134a-analysis",
+    label: "M3 CubeSat",
+    metricLabel: "Launch milestone",
+    metricValue: "2024",
+    metricUnit: "Falcon 9"
+  },
+  {
+    slug: "atlas-ai-presales",
+    label: "AI Automation",
+    metricLabel: "Companies scored",
+    metricValue: "93",
+    metricUnit: "reviewed locally"
+  },
+  {
+    slug: "adaptive-fdm-drone-frame",
+    label: "FDM Research",
+    metricLabel: "Target platform",
+    metricValue: "5-7",
+    metricUnit: "inch class"
+  }
+];
+
+window.featuredProjectConfig = featuredProjectConfig;
+
+function initFeaturedShowcase() {
+  const section = document.querySelector(".featured-scroll");
+  if (!section) return;
+
+  const items = featuredProjectConfig.map((config) => ({
+    ...projects.find((project) => project.slug === config.slug),
+    ...config
+  }));
+  const stage = section.querySelector(".featured-stage");
+  const title = document.querySelector("#featured-title");
+  const kicker = document.querySelector("#featured-kicker");
+  const summary = document.querySelector("#featured-summary");
+  const tags = document.querySelector("#featured-tags");
+  const image = document.querySelector("#featured-image");
+  const caption = document.querySelector("#featured-caption");
+  const current = document.querySelector("#featured-current");
+  const metricLabel = document.querySelector("#featured-metric-label");
+  const metricValue = document.querySelector("#featured-metric-value");
+  const metricUnit = document.querySelector("#featured-metric-unit");
+  const inspect = document.querySelector("#featured-inspect");
+  const progress = document.querySelector("#featured-progress");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeIndex = -1;
+  let ticking = false;
+
+  progress.innerHTML = items
+    .map((item, index) => `<button type="button" data-feature-index="${index}" aria-label="Show ${item.label}"><span></span></button>`)
+    .join("");
+
+  function setItem(index, immediate = false) {
+    const nextIndex = Math.max(0, Math.min(items.length - 1, index));
+    if (nextIndex === activeIndex) return;
+    activeIndex = nextIndex;
+    const item = items[nextIndex];
+    if (!immediate && !reduceMotion.matches) stage.classList.add("is-changing");
+
+    const update = () => {
+      current.textContent = String(nextIndex + 1).padStart(2, "0");
+      kicker.textContent = item.source;
+      title.textContent = item.title;
+      summary.textContent = item.summary;
+      tags.innerHTML = item.tags.slice(0, 3).map((tag) => `<span>${tag}</span>`).join("");
+      image.src = item.image;
+      image.alt = item.imageAlt || item.title;
+      caption.textContent = item.imageCredit || "Project image";
+      metricLabel.textContent = item.metricLabel;
+      metricValue.textContent = item.metricValue;
+      metricUnit.textContent = item.metricUnit;
+      inspect.dataset.project = item.slug;
+      progress.querySelectorAll("button").forEach((button, buttonIndex) => {
+        button.classList.toggle("active", buttonIndex === nextIndex);
+        button.setAttribute("aria-current", buttonIndex === nextIndex ? "true" : "false");
+      });
+      requestAnimationFrame(() => stage.classList.remove("is-changing"));
+    };
+
+    if (immediate || reduceMotion.matches) update();
+    else window.setTimeout(update, 150);
+  }
+
+  function scrollToItem(index) {
+    const maxScroll = section.offsetHeight - window.innerHeight;
+    const y = section.offsetTop + (index / (items.length - 1)) * maxScroll;
+    window.scrollTo({ top: y, behavior: reduceMotion.matches ? "auto" : "smooth" });
+  }
+
+  function updateFromScroll() {
+    ticking = false;
+    const rect = section.getBoundingClientRect();
+    const maxScroll = Math.max(1, rect.height - window.innerHeight);
+    const sectionProgress = Math.min(1, Math.max(0, -rect.top / maxScroll));
+    stage.style.setProperty("--featured-progress", sectionProgress.toFixed(4));
+    setItem(Math.round(sectionProgress * (items.length - 1)));
+  }
+
+  function requestUpdate() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateFromScroll);
+  }
+
+  progress.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-feature-index]");
+    if (button) scrollToItem(Number(button.dataset.featureIndex));
+  });
+  document.querySelector("#featured-prev").addEventListener("click", () => scrollToItem(Math.max(0, activeIndex - 1)));
+  document.querySelector("#featured-next").addEventListener("click", () => scrollToItem(Math.min(items.length - 1, activeIndex + 1)));
+  inspect.addEventListener("click", () => openProject(inspect.dataset.project));
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  setItem(0, true);
+  updateFromScroll();
 }
 
 function initNavigation() {
@@ -865,6 +1006,5 @@ renderSkills();
 initContentAnimations();
 initNavigation();
 initProjectInteractions();
-initZoomStory();
-initMissionCanvas();
+initFeaturedShowcase();
 initHashProject();
