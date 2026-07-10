@@ -35,3 +35,4 @@
 ## Personal image asset
 
 - `assets/images/profile/hieu-profile-portrait.jpg`, `assets/images/profile/hieu-profile-square.jpg`, and `assets/images/profile/hieu-profile-avatar.jpg` were generated from the profile photo supplied by Hieu Hoang in the Codex session.
+- `assets/images/profile/hieu-ford-lounge.webp` and `assets/images/profile/hieu-outdoor-jacket.webp` were optimized from additional personal photos supplied by Hieu Hoang in the Codex session.
