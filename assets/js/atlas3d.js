@@ -15,6 +15,14 @@ if (host && section && window.WebGLRenderingContext) {
   const currentLabel = document.querySelector("#atlas-current");
   const arcDot = document.querySelector("#atlas-arc-dot");
   const fallback = document.querySelector("#atlas-fallback");
+  const detail = document.querySelector("#atlas-project-detail");
+  const detailSource = document.querySelector("#atlas-detail-source");
+  const detailTitle = document.querySelector("#atlas-detail-title");
+  const detailSummary = document.querySelector("#atlas-detail-summary");
+  const detailMetricLabel = document.querySelector("#atlas-detail-metric-label");
+  const detailMetricValue = document.querySelector("#atlas-detail-metric-value");
+  const detailMetricUnit = document.querySelector("#atlas-detail-metric-unit");
+  const detailInspect = document.querySelector("#atlas-inspect");
 
   controls.innerHTML = items
     .map(
@@ -75,6 +83,7 @@ if (host && section && window.WebGLRenderingContext) {
   let displayIndex = 0;
   let activeIndex = -1;
   let raf = 0;
+  let detailTimer = 0;
 
   function setActive(index) {
     if (index === activeIndex) return;
@@ -86,6 +95,19 @@ if (host && section && window.WebGLRenderingContext) {
     });
     arcDot.style.setProperty("--atlas-dot", `${index / Math.max(1, items.length - 1)}`);
     section.dataset.activeProject = items[index].label.toLowerCase().replace(/\s+/g, "-");
+    const item = items[index];
+    window.clearTimeout(detailTimer);
+    detail.classList.add("is-changing");
+    detailTimer = window.setTimeout(() => {
+      detailSource.textContent = item.source;
+      detailTitle.textContent = item.title;
+      detailSummary.textContent = item.atlasDescription || item.summary;
+      detailMetricLabel.textContent = item.metricLabel;
+      detailMetricValue.textContent = item.metricValue;
+      detailMetricUnit.textContent = item.metricUnit;
+      detailInspect.dataset.project = item.slug;
+      requestAnimationFrame(() => detail.classList.remove("is-changing"));
+    }, reduceMotion.matches ? 0 : 110);
   }
 
   function updateScrollTarget() {
@@ -140,6 +162,10 @@ if (host && section && window.WebGLRenderingContext) {
   controls.addEventListener("click", (event) => {
     const button = event.target.closest("[data-atlas-index]");
     if (button) scrollToItem(Number(button.dataset.atlasIndex));
+  });
+
+  detailInspect.addEventListener("click", () => {
+    if (detailInspect.dataset.project) window.openPortfolioProject?.(detailInspect.dataset.project);
   });
 
   renderer.domElement.addEventListener("click", (event) => {

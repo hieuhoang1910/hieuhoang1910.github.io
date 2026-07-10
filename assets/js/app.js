@@ -50,6 +50,31 @@ const projects = [
     ]
   },
   {
+    slug: "nasa-m3-cubesat",
+    title: "NASA M3 CubeSat Systems Integration",
+    subtitle: "Flight computer, EPS, radio, and cleanroom integration for a 3U spacecraft",
+    source: "M-SAT spacecraft systems",
+    category: ["Spacecraft", "Testing", "Embedded Systems"],
+    tags: ["3U CubeSat", "C++", "EPS", "Iridium", "Cleanroom", "Falcon 9"],
+    tools: ["C++", "flight computer testing", "EPS testing", "Iridium radio integration", "wire-harness assembly"],
+    visual: "data",
+    colors: ["#15334a", "#27351d"],
+    image: "assets/images/projects/mst-satellite-lab-pcb.png",
+    imageAlt: "Missouri S&T Satellite Research Team members working on a student-designed printed circuit board",
+    imageCredit: "Photo: Missouri S&T News, Joseph Nguyen",
+    summary:
+      "Supported the NASA-backed M3 3U CubeSat as an M-SAT member through C++ flight-computer and electrical power-system testing, Iridium radio integration, and cleanroom wire-harness assembly before its 2024 Falcon 9 launch.",
+    role: "M-SAT spacecraft systems contributor",
+    date: "Academic program, launched 2024",
+    metrics: "3U CubeSat; NASA CubeSat Launch Initiative; launched on SpaceX Falcon 9 in 2024",
+    highlights: [
+      "Contributed to flight-computer and EPS test activity before launch.",
+      "Supported Iridium radio integration for spacecraft communications.",
+      "Performed cleanroom wire-harness assembly within the student spacecraft program.",
+      "Worked across software, electrical, and physical integration boundaries on flight hardware."
+    ]
+  },
+  {
     slug: "vinnotek-master-baseline-viewer",
     title: "Cold Plate Master Baseline Viewer",
     subtitle: "Interactive copper-AM GPU cold-plate design baseline and candidate viewer",
@@ -451,6 +476,7 @@ function renderProjects() {
     .join("");
   renderIcons(projectGrid);
   prepareContentAnimations(projectGrid);
+  requestArchiveMotion();
 }
 
 function renderRepoIndex() {
@@ -527,6 +553,40 @@ function initContentAnimations() {
   document.querySelectorAll(".content-reveal:not(.is-visible)").forEach((node) => revealObserver.observe(node));
 }
 
+let archiveMotionTicking = false;
+
+function updateArchiveMotion() {
+  archiveMotionTicking = false;
+  const cards = document.querySelectorAll("#project-grid .project-card");
+  const viewportCenter = window.innerHeight * 0.56;
+  const influence = Math.max(320, window.innerHeight * 0.72);
+
+  cards.forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    const cardCenter = rect.top + rect.height / 2;
+    const focus = Math.max(0, Math.min(1, 1 - Math.abs(cardCenter - viewportCenter) / influence));
+    const eased = focus * focus * (3 - 2 * focus);
+    card.style.setProperty("--archive-opacity", (0.68 + eased * 0.32).toFixed(3));
+    card.style.setProperty("--archive-shift", `${((1 - eased) * 22).toFixed(1)}px`);
+    card.style.setProperty("--archive-scale", (0.94 + eased * 0.06).toFixed(4));
+    card.style.setProperty("--archive-blur", `${((1 - eased) * 2.2).toFixed(2)}px`);
+    card.style.setProperty("--archive-image-scale", (1.01 + eased * 0.08).toFixed(4));
+  });
+}
+
+function requestArchiveMotion() {
+  if (archiveMotionTicking) return;
+  archiveMotionTicking = true;
+  requestAnimationFrame(updateArchiveMotion);
+}
+
+function initArchiveMotion() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  window.addEventListener("scroll", requestArchiveMotion, { passive: true });
+  window.addEventListener("resize", requestArchiveMotion);
+  requestArchiveMotion();
+}
+
 function openProject(slug) {
   const project = projects.find((item) => item.slug === slug);
   if (!project) return;
@@ -572,6 +632,7 @@ const featuredProjectConfig = [
   {
     slug: "resistojet-nozzle-thruster",
     label: "Propulsion",
+    atlasDescription: "Led a CubeSat-class propulsion upgrade linking R134a test data, thermal modeling, heater sizing, and future vacuum-test planning.",
     metricLabel: "Single-thruster baseline",
     metricValue: "18.76",
     metricUnit: "mN"
@@ -579,13 +640,15 @@ const featuredProjectConfig = [
   {
     slug: "vinnotek-master-baseline-viewer",
     label: "Cold Plate",
+    atlasDescription: "Built an internal copper-AM baseline viewer that keeps geometry comparison, manufacturability gates, and browser KPIs tied to validated Python solvers.",
     metricLabel: "Best junction-to-coolant",
     metricValue: "14.52",
     metricUnit: "mK/W"
   },
   {
-    slug: "cold-gas-r134a-analysis",
+    slug: "nasa-m3-cubesat",
     label: "M3 CubeSat",
+    atlasDescription: "Supported flight-computer and EPS testing, Iridium radio integration, and cleanroom wire-harness assembly for the NASA-backed M3 3U CubeSat.",
     metricLabel: "Launch milestone",
     metricValue: "2024",
     metricUnit: "Falcon 9"
@@ -593,6 +656,7 @@ const featuredProjectConfig = [
   {
     slug: "atlas-ai-presales",
     label: "AI Automation",
+    atlasDescription: "Designed a local pre-sales pipeline that structures discovery data, scores industrial prospects with an editable contract, and preserves human review before CRM handoff.",
     metricLabel: "Companies scored",
     metricValue: "93",
     metricUnit: "reviewed locally"
@@ -600,6 +664,7 @@ const featuredProjectConfig = [
   {
     slug: "adaptive-fdm-drone-frame",
     label: "FDM Research",
+    atlasDescription: "Created a validation roadmap for modular FDM and continuous-fiber drone frames across mass, stiffness, vibration, repairability, and load-path design.",
     metricLabel: "Target platform",
     metricValue: "5-7",
     metricUnit: "inch class"
@@ -1007,4 +1072,5 @@ initContentAnimations();
 initNavigation();
 initProjectInteractions();
 initFeaturedShowcase();
+initArchiveMotion();
 initHashProject();

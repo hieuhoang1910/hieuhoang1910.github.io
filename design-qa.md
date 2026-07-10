@@ -15,6 +15,10 @@
 - Mobile atlas, 390 x 844, Cold Plate state: `C:\Vinnotek\portfolio\artifacts\qa\mobile-atlas.png`
 - Mobile featured project, 390 x 844, Cold Plate state: `C:\Vinnotek\portfolio\artifacts\qa\mobile-featured.png`
 - Mobile contact, 390 x 844: `C:\Vinnotek\portfolio\artifacts\qa\mobile-contact.png`
+- Desktop atlas with synchronized description, 1440 x 1000, Cold Plate state: `C:\Vinnotek\portfolio\artifacts\qa\desktop-atlas-description.png`
+- Mobile atlas with synchronized description, 390 x 844, Cold Plate state: `C:\Vinnotek\portfolio\artifacts\qa\mobile-atlas-description.png`
+- Engineering Archive depth-zoom state, 1440 x 1000: `C:\Vinnotek\portfolio\artifacts\qa\desktop-archive-zoom.png`
+- User-provided atlas state and updated description state combined comparison: `C:\Vinnotek\portfolio\artifacts\qa\atlas-before-vs-description.png`
 - Combined source and implementation comparison: `C:\Vinnotek\portfolio\artifacts\qa\reference-vs-implementation.png`
 
 ## Fidelity surfaces
@@ -24,6 +28,8 @@
 - Dark split-screen featured project with metric emphasis, inspection CTA, and five-position navigation.
 - Full-bleed Earth-horizon contact finale with orbit trajectories and a bottom contact index.
 - Existing real portrait preserved in the hero; mobile places the portrait before the biography.
+- Scroll-synchronized atlas descriptions expose the active project's discipline, title, concise context, key metric, and inspection action.
+- Engineering Archive cards use continuous reading-zone depth motion: restrained scale, lift, focus, and image push-in rather than a one-time reveal only.
 
 ## Iteration history
 
@@ -31,6 +37,8 @@
 2. First mobile comparison found the atlas headline overlapping the 3D cards; reduced the mobile headline size and moved the canvas stage lower.
 3. First mobile contact comparison wrapped the headline into four short lines; adjusted the fixed mobile type size to restore the intended two-line composition.
 4. Combined comparison confirmed the main hierarchy, palette, type treatment, featured-project split, and contact finale match the selected direction. Project images remain less aggressively cropped by design, honoring the prior request to avoid excessive zoom.
+5. Added active-project briefs to the atlas and moved the mobile canvas lower so the description remains legible without covering project imagery.
+6. Added scroll-linked depth zoom to the Engineering Archive, then reduced peripheral blur and opacity loss so neighboring work remains readable while the center row gains emphasis.
 
 ## Verification
 
@@ -38,5 +46,6 @@
 - No browser console errors or failed network requests.
 - Mobile document width equals viewport width (`390px`), with no horizontal overflow.
 - Featured-project dialog, project search, generated assets, real portrait, and resume PDF verified in-browser.
+- All five atlas states update to the correct description and project slug; the M3 state opens its dedicated CubeSat systems-integration record.
 
 final result: passed
