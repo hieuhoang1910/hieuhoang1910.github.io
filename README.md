@@ -8,6 +8,7 @@ Built from personal portfolio notes, local Vinnotek project summaries and report
 
 - Portfolio: <https://hieuhoang1910.github.io/>
 - Digital business card: <https://hieuhoang1910.github.io/card.html>
+- Resume PDF: [https://hieuhoang1910.github.io/downloads/Hieu_Hoang_Resume.pdf](https://hieuhoang1910.github.io/downloads/Hieu_Hoang_Resume.pdf)
 - `assets/qr/qr-portfolio.png` / `.svg` - QR codes pointing to the portfolio homepage
 - `assets/qr/qr-card.png` / `.svg` - QR codes pointing to the business card page (kept for later; not currently displayed)
 - `assets/share/hieu-card.png` - shareable 1200x630 card image (also the Open Graph link preview)
