@@ -20,6 +20,7 @@
 - GitHub profile: https://github.com/hieuhoang1910?tab=repositories
 - `my-codes` repository: https://github.com/hieuhoang1910/my-codes
 - Apple AirPods Pro 3 reference page for interaction direction: https://www.apple.com/airpods-pro/
+- BoilerLab contact and star-flight motion reference: https://boilerlab.ai/
 
 ## Downloaded public image assets
 
@@ -36,7 +37,10 @@
 
 - `assets/images/projects/atlas-ai-workflow.webp` is an illustrative workflow visual generated for this portfolio. It represents the documented ATLAS stages without claiming to be a live product screenshot or displaying fabricated metrics.
 - `assets/images/projects/fdm-drone-frame-concept.webp` is an illustrative four-arm FDM quadcopter-frame concept generated for this portfolio. It is not presented as fabricated or tested hardware.
-- `assets/images/contact/earth-horizon.webp` is a generated cinematic Earth-horizon background for the contact section.
+
+## NASA contact-section visual
+
+- `assets/images/contact/nasa-full-moon-3k.webp` was derived from NASA Scientific Visualization Studio's `ph4_full_moon_6k.tif` (5760 x 3240), published with the [Moon Phases Loop](https://svs.gsfc.nasa.gov/4310/). The local asset is a 3240 x 3240 high-quality WebP crop used for the scroll-driven contact scene. Credit: NASA's Scientific Visualization Studio.
 
 ## Personal image asset
 
